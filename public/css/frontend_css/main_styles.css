@@ -888,11 +888,14 @@ section
 4. Banner
 *********************************/
 
+
+.main_categories{
+	margin-top: 75px;
+}
+
 .banner
 {
 	width: 100%;
-	margin-top: 30px;
-
 }
 .banner_item
 {
@@ -901,12 +904,11 @@ section
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 265px;
+	height: fit-content;
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 100% 250px;
 	background-position: center center;
 
 
@@ -915,7 +917,6 @@ section
 {
 	height: 50px;
 	min-width: 180px;
-
 	margin-top: 90%;
 
 }
