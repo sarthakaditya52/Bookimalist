@@ -64,3 +64,7 @@ Route::match(['get','post'],'/single/{url}','BooksController@temp');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
