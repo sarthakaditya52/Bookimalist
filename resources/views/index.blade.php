@@ -24,21 +24,29 @@ use App\MainCategory;
     </a>
 </div>
 
+
+    <div class="row">
+        <div class="col text-center">
+            <div class="main_categories">
+                <h2>Main Categories</h2>
+            </div>
+        </div>
+    </div>
+
+
 <!-- Banner -->
 
 <div class="banner">
     <div class="container">
-        <div class="row">
-            @foreach($categories as $category)
-            <div class="col-md-4">
-                <div class="banner_item align-items-center" style="background-image:url({{ asset('/images/backend_images/category/medium/'.$category->image) }})">
-                    <div class="banner_category">
-                        <a href="{{ asset('/books/'.$category->url) }}">{{$category->name}}</a>
-                    </div>
+        @foreach($categories as $category)
+        <div class="col-md-4">
+            <div class="banner_item align-items-center" style="background-image:url({{ asset('/images/backend_images/category/small/'.$category->image) }})">
+                <div class="banner_category">
+                    <a href="{{ asset('/books/'.$category->url) }}">{{$category->name}}</a>
                 </div>
             </div>
-            @endforeach
         </div>
+        @endforeach
     </div>
 </div>
 

@@ -18,6 +18,7 @@ class CreateSubCategoryTable extends Migration
             $table->integer('parent_id');
             $table->string('name');
             $table->string('url');
+            $table->string('image');
             $table->timestamps();
         });
     }

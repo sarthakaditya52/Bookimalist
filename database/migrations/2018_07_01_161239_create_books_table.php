@@ -20,8 +20,6 @@ class CreateBooksTable extends Migration
             $table->string('isbn');
             $table->string('image');
             $table->decimal('price',10,2);
-            $table->integer('author_id');
-            $table->integer('publisher_id');
             $table->text('description');
             $table->timestamps();
         });

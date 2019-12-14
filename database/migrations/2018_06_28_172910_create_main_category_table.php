@@ -18,6 +18,7 @@ class CreateMainCategoryTable extends Migration
             $table->string('name');
             $table->string('url');
             $table->integer('parent_id');
+            $table->string('image');
             $table->timestamps();
         });
     }

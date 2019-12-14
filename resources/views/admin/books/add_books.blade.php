@@ -1,5 +1,5 @@
 <?php
-require_once ('/Users/sarthak/Projects/Bookimalist_beta_2/vendor/autoload.php');
+require_once ('/Users/sarthak/Projects/Bookimalist/vendor/autoload.php');
 use Scriptotek\GoogleBooks\GoogleBooks;
 $books = new GoogleBooks(['key' => 'AIzaSyDA8VPC4k7-NdulFJGfDgVARjjSIWcmMy0']);
 ?>
@@ -35,7 +35,7 @@ $books = new GoogleBooks(['key' => 'AIzaSyDA8VPC4k7-NdulFJGfDgVARjjSIWcmMy0']);
                                 $text="";
 
                                     $book = $books->volumes->byIsbn($_POST['isbn']);
-                                if (count($book->authors))
+                                if ($book->authors)
                                 {
                                     foreach ($book->authors as $key) {
                                         $text=$text.$key.",";
@@ -80,7 +80,7 @@ $books = new GoogleBooks(['key' => 'AIzaSyDA8VPC4k7-NdulFJGfDgVARjjSIWcmMy0']);
                                         <td>{{ $book->industryIdentifiers[0]->identifier }}</td>
                                         <td><label>Book Price </label><input type="text" name="book_price" id="book_price" style="width: auto">
                                             </td>
-                                        <td><?php if (count($book->authors)) {foreach ($book->authors as $key) {
+                                        <td><?php if ($book->authors) {foreach ($book->authors as $key) {
                                                 echo $key."<br>";
                                             }
                                             }?></td>
@@ -131,7 +131,7 @@ $books = new GoogleBooks(['key' => 'AIzaSyDA8VPC4k7-NdulFJGfDgVARjjSIWcmMy0']);
                 if (isset($_POST['searchname']))
                 {
                     $text="";
-                    if (count($book->authors)){
+                    if ($book->authors){
                         foreach ($book->authors as $key) {
                             $text=$text.$key.",";
                         }
@@ -161,7 +161,7 @@ $books = new GoogleBooks(['key' => 'AIzaSyDA8VPC4k7-NdulFJGfDgVARjjSIWcmMy0']);
                         <td>{{ $book->industryIdentifiers[0]->identifier }}</td>
                         <td><label>Book Price </label><input type="text" name="book_price" id="book_price" style="width: auto">
                         </td>
-                        <td><?php if (count($book->authors)) {foreach ($book->authors as $key) {
+                        <td><?php if ($book->authors) {foreach ($book->authors as $key) {
                                 echo $key."<br>";
                             }
                             }?></td>

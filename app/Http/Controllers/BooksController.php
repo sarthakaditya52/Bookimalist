@@ -262,32 +262,12 @@ class BooksController extends Controller
                         $author->save();
                     }
                 }
-                $temp=$book->id;
-                //$book->author_id = $data['book_author'];
                 if (!empty($data['book_details']))
                     $book->description = $data['book_details'];
                 else
                     $book->description = '';
 
-                //Image Upload
-                /*if ($request->hasFile('book_image')) {
-                    $image_temp = Input::file('book_image');
-                    if ($image_temp->isValid()) {
-                        $extension = $image_temp->getClientOriginalExtension();
-                        $filename = rand(111, 999999) . '.' . $extension;
-                        $large_image_path = 'images/backend_images/books/large/' . $filename;
-                        $medium_image_path = 'images/backend_images/books/medium/' . $filename;
-                        $small_image_path = 'images/backend_images/books/small/' . $filename;
-                        //Resized Images
-                        Image::make($image_temp)->resize(1200, 1200)->save($large_image_path);
-                        Image::make($image_temp)->resize(600, 600)->save($medium_image_path);
-                        Image::make($image_temp)->resize(300, 300)->save($small_image_path);
-*/
-
-                        //Store image in book table
-                        $book->image = $data['book_image'];
-
-                //image upload
+                $book->image = $data['book_image'];
 
                 $book->save();
 

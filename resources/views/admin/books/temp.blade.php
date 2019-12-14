@@ -1,6 +1,6 @@
 
 <?php
-require_once ('/Users/sarthak/Projects/Bookimalist_beta_2/vendor/autoload.php');
+require_once ('/Users/sarthak/Projects/Bookimalist/vendor/autoload.php');
 use Scriptotek\GoogleBooks\GoogleBooks;
 $books = new GoogleBooks(['key' => 'AIzaSyDA8VPC4k7-NdulFJGfDgVARjjSIWcmMy0']);
 ?>
